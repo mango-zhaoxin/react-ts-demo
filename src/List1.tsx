@@ -30,6 +30,7 @@ const List1: FC = () => {
     <div>
       <h1>问卷列表页</h1>
       <div>测试</div>
+      <div>hello word</div>
       {questionList.map((item) => {
         const { id, title, isPublished } = item
         return (
