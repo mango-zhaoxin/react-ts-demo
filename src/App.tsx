@@ -10,6 +10,9 @@ function App() {
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
+        <div>
+          这是一个测试编辑器，使用低代码来实现，主要用于低代码项目学习。
+        </div>
         <a
           className="App-link"
           href="https://reactjs.org"
