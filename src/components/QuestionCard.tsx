@@ -6,12 +6,25 @@ interface QuestionCardProps {
   id: string
   title: string
   isPublished: boolean
+  deleteQuestion?: (id: string) => void
+  publishQuestion?: (id: string) => void
 }
 
 const QuestionCard: FC<QuestionCardProps> = (props) => {
-  const { id, title, isPublished } = props
+  const { id, title, isPublished, deleteQuestion, publishQuestion } = props
+
+  // 编辑问卷
   function edit(id: string) {
     console.log(id)
+  }
+
+  // 删除问卷
+  function del(id: string) {
+    deleteQuestion && deleteQuestion(id)
+  }
+
+  function publish(id: string) {
+    publishQuestion && publishQuestion(id)
   }
   return (
     <div key={id} className="list-item">
@@ -23,7 +36,11 @@ const QuestionCard: FC<QuestionCardProps> = (props) => {
         <span>未发布</span>
       )}
       &nbsp;
+      <button onClick={() => publish(id)}>发布问卷</button>
+      &nbsp;
       <button onClick={() => edit(id)}>编辑问卷</button>
+      &nbsp;
+      <button onClick={() => del(id)}>删除问卷</button>
     </div>
   )
 }
