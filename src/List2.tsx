@@ -1,5 +1,6 @@
 import React, { FC, useState } from 'react'
 import QuestionCard from './components/QuestionCard'
+import { produce } from 'immer'
 import './List1.css'
 
 const List1: FC = () => {
@@ -30,13 +31,25 @@ const List1: FC = () => {
    * @desc 新增问卷
    */
   function add() {
-    const questionIndex = questionList.length + 1
+    // const questionIndex = questionList.length + 1
+    // setQuestionList(
+    //   // 新增使用 concat
+    //   questionList.concat({
+    //     id: 'q' + questionIndex,
+    //     title: '问卷' + questionIndex,
+    //     isPublished: false
+    //   })
+    // )
+
+    // 使用immer
+    const r = Math.random().toString().slice(-3)
     setQuestionList(
-      // 新增使用 concat
-      questionList.concat({
-        id: 'q' + questionIndex,
-        title: '问卷' + questionIndex,
-        isPublished: false
+      produce((draft) => {
+        draft.push({
+          id: 'q' + r,
+          title: '问卷' + r,
+          isPublished: false
+        })
       })
     )
   }
@@ -46,10 +59,18 @@ const List1: FC = () => {
    */
   function deleteQuestion(id: string) {
     // 删除使用 filter
+    // setQuestionList(
+    //   questionList.filter((item) => {
+    //     if (item.id === id) return false
+    //     else return true
+    //   })
+    // )
+
+    // 使用immer
     setQuestionList(
-      questionList.filter((item) => {
-        if (item.id === id) return false
-        else return true
+      produce((draft) => {
+        const index = draft.findIndex((item) => item.id === id)
+        draft.splice(index, 1)
       })
     )
   }
@@ -59,13 +80,21 @@ const List1: FC = () => {
    */
   function publishQuestion(id: string) {
     // 修改使用 map
+    // setQuestionList(
+    //   questionList.map((item) => {
+    //     if (item.id !== id) return item
+    //     return {
+    //       ...item,
+    //       isPublished: true
+    //     }
+    //   })
+    // )
+
+    // 使用immer
     setQuestionList(
-      questionList.map((item) => {
-        if (item.id !== id) return item
-        return {
-          ...item,
-          isPublished: true
-        }
+      produce((draft) => {
+        const target = draft.find((item) => item.id === id)
+        if (target) target.isPublished = true
       })
     )
   }
