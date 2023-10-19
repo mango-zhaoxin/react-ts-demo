@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react'
+import React, { FC, useEffect, useState } from 'react'
 import QuestionCard from './components/QuestionCard'
 import { produce } from 'immer'
 import './List1.css'
@@ -98,6 +98,13 @@ const List1: FC = () => {
       })
     )
   }
+
+  useEffect(() => {
+    console.log('question card mounted')
+    return () => {
+      console.log('销毁')
+    }
+  }, [])
 
   return (
     <div>
