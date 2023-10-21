@@ -1,5 +1,6 @@
 import React, { FC, useEffect, useState } from 'react'
 import QuestionCard from './components/QuestionCard'
+import styles from './List2.module.css'
 import { produce } from 'immer'
 
 const List1: FC = () => {
@@ -108,6 +109,7 @@ const List1: FC = () => {
   return (
     <div>
       <h1>问卷列表页-新版</h1>
+      <p className={styles['list-item']}>css module 样式测试</p>
       {questionList.map((item) => {
         const { id, title, isPublished } = item
         return (
