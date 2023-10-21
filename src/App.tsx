@@ -4,8 +4,10 @@ import React from 'react'
 // import ImmerDemo from './Immer'
 // import UseRefDemo from './UseRefDemo'
 import UseMemoDemo from './UseMemoDemo'
+import useTitle from './hooks/useTitle'
 
 function App() {
+  useTitle('demo page')
   return (
     <>
       {/* <List1 /> */}
