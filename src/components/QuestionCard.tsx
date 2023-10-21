@@ -1,6 +1,8 @@
 import React, { FC } from 'react'
 // import './QuestionCard.css'
-import styles from './QuestionCard.module.css'
+// import styles from './QuestionCard.module.css'
+import styles from './QuestionCard.module.scss'
+import classNames from 'classnames'
 // import classnames from 'classnames'
 
 // 定义属性接口
@@ -21,6 +23,13 @@ const QuestionCard: FC<QuestionCardProps> = (props) => {
   //   published: isPublished
   // })
 
+  const listItemClass = styles['list-item']
+  const publishedClass = styles['published-item']
+  const itemClassName = classNames({
+    [listItemClass]: true,
+    [publishedClass]: isPublished
+  })
+
   // 编辑问卷
   function edit(id: string) {
     console.log(id)
@@ -35,11 +44,11 @@ const QuestionCard: FC<QuestionCardProps> = (props) => {
     publishQuestion && publishQuestion(id)
   }
   return (
-    <div key={id} className={styles['list-item']}>
+    <div key={id} className={itemClassName}>
       <strong>{title}</strong>
       &nbsp;
       {isPublished ? (
-        <span style={{ color: 'green' }}>已发布</span>
+        <span className={styles['published-span']}>已发布</span>
       ) : (
         <span>未发布</span>
       )}
