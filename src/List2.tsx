@@ -1,7 +1,6 @@
 import React, { FC, useEffect, useState } from 'react'
 import QuestionCard from './components/QuestionCard'
 import { produce } from 'immer'
-import './List1.css'
 
 const List1: FC = () => {
   const [questionList, setQuestionList] = useState([

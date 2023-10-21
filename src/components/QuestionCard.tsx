@@ -1,5 +1,6 @@
 import React, { FC } from 'react'
 import './QuestionCard.css'
+import classnames from 'classnames'
 
 // 定义属性接口
 interface QuestionCardProps {
@@ -12,6 +13,12 @@ interface QuestionCardProps {
 
 const QuestionCard: FC<QuestionCardProps> = (props) => {
   const { id, title, isPublished, deleteQuestion, publishQuestion } = props
+
+  const itemClassName = classnames('list-item', { published: isPublished })
+  // const itemClassName = classnames({
+  //   'list-item': true,
+  //   published: isPublished
+  // })
 
   // 编辑问卷
   function edit(id: string) {
@@ -27,7 +34,7 @@ const QuestionCard: FC<QuestionCardProps> = (props) => {
     publishQuestion && publishQuestion(id)
   }
   return (
-    <div key={id} className="list-item">
+    <div key={id} className={itemClassName}>
       <strong>{title}</strong>
       &nbsp;
       {isPublished ? (
