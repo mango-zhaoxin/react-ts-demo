@@ -5,11 +5,13 @@ import React from 'react'
 // import UseRefDemo from './UseRefDemo'
 // import UseMemoDemo from './UseMemoDemo'
 // import useTitle from './hooks/useTitle'
-import useMouse from './hooks/useMouse'
+// import useMouse from './hooks/useMouse'
+import useGetInfo from './hooks/useGetInfo'
 
 function App() {
   // useTitle('demo page')
-  const { x, y } = useMouse()
+  // const { x, y } = useMouse()
+  const { loading, info } = useGetInfo()
   return (
     <>
       {/* <List1 /> */}
@@ -17,7 +19,8 @@ function App() {
       {/* <ImmerDemo /> */}
       {/* <UseRefDemo /> */}
       {/* <UseMemoDemo /> */}
-      鼠标的位置：{x} {y}
+      {/* 鼠标的位置：{x} {y} */}
+      {loading ? '加载中....' : info}
     </>
   )
 }
