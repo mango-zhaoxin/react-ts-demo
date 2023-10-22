@@ -9,7 +9,8 @@ import React from 'react'
 // import useGetInfo from './hooks/useGetInfo'
 // import { useTitle, useMouse } from 'ahooks'
 // import ClosureTrap from './ClosureTrap'
-import StyledComponentsDemo from './StyledComponentsDemo'
+// import StyledComponentsDemo from './StyledComponentsDemo'
+import FormElementDemo from './FormElementDemo'
 
 function App() {
   // useTitle('demo page')
@@ -30,7 +31,8 @@ function App() {
       {/* {loading ? '加载中....' : info} */}
       {/* ahooks使用标注鼠标位置：{mouse.pageX}, y: {mouse.pageY} */}
       {/* <ClosureTrap /> */}
-      <StyledComponentsDemo />
+      {/* <StyledComponentsDemo /> */}
+      <FormElementDemo />
     </>
   )
 }
