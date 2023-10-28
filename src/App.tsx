@@ -10,7 +10,8 @@ import React from 'react'
 // import { useTitle, useMouse } from 'ahooks'
 // import ClosureTrap from './ClosureTrap'
 // import StyledComponentsDemo from './StyledComponentsDemo'
-import FormElementDemo from './FormElementDemo'
+// import FormElementDemo from './FormElementDemo'
+import ContextDemo from './ContextDemo'
 
 function App() {
   // useTitle('demo page')
@@ -32,7 +33,8 @@ function App() {
       {/* ahooks使用标注鼠标位置：{mouse.pageX}, y: {mouse.pageY} */}
       {/* <ClosureTrap /> */}
       {/* <StyledComponentsDemo /> */}
-      <FormElementDemo />
+      {/* <FormElementDemo /> */}
+      <ContextDemo />
     </>
   )
 }
