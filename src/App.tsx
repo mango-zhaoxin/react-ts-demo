@@ -12,7 +12,8 @@ import React from 'react'
 // import StyledComponentsDemo from './StyledComponentsDemo'
 // import FormElementDemo from './FormElementDemo'
 // import ContextDemo from './ContextDemo'
-import CounterReducer from './CountReducer'
+// import CounterReducer from './CountReducer'
+import TodoReducer from './TodoReducer'
 
 function App() {
   // useTitle('demo page')
@@ -36,7 +37,8 @@ function App() {
       {/* <StyledComponentsDemo /> */}
       {/* <FormElementDemo /> */}
       {/* <ContextDemo /> */}
-      <CounterReducer />
+      {/* <CounterReducer /> */}
+      <TodoReducer />
     </>
   )
 }
