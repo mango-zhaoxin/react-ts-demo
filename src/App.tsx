@@ -11,7 +11,8 @@ import React from 'react'
 // import ClosureTrap from './ClosureTrap'
 // import StyledComponentsDemo from './StyledComponentsDemo'
 // import FormElementDemo from './FormElementDemo'
-import ContextDemo from './ContextDemo'
+// import ContextDemo from './ContextDemo'
+import CounterReducer from './CountReducer'
 
 function App() {
   // useTitle('demo page')
@@ -34,7 +35,8 @@ function App() {
       {/* <ClosureTrap /> */}
       {/* <StyledComponentsDemo /> */}
       {/* <FormElementDemo /> */}
-      <ContextDemo />
+      {/* <ContextDemo /> */}
+      <CounterReducer />
     </>
   )
 }
